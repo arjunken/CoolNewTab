@@ -1,0 +1,77 @@
+/* Layout */
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400italic);
+
+body {
+    background: url("https://source.unsplash.com/random/1200x800") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    opacity: 0.90;
+    
+    }
+
+.main{
+
+    padding-top: 15px;
+   
+}
+
+div.card {
+background:transparent;
+
+}
+
+#taskcard,#ltckcard,#gscard, #newscard, #bmcard,#ck1card,#ck2card,#ck3card,#newscard,#hscard,#qodcard,#wodcard,#weathercard {
+    
+    border-radius: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#currenttime {
+    white-space: nowrap;
+    font-size: 3vw;    
+    text-align: center;
+}
+
+#extheading{
+    text-align: left;
+    width: 50%;
+    -webkit-text-stroke:1px white;
+    font-style: italic;
+    font-family: cursive;
+}
+
+#timedisplay{
+    color:blue;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    padding-top: 5px; 
+    float:right;       
+}
+
+#qod{
+
+    font-family: 'PT Serif', serif;
+    font-size:1.5em;
+    text-align:center;
+    color:#fff;
+    text-shadow:2px 2px 3px rgba(150,150,150,0.75);
+}
+
+#quoteblock{
+    font-family: 'PT Serif', serif;
+    text-shadow:2px 2px 3px rgba(150,150,150,0.75);
+    font-size:1.5em;
+    }
+    
+#author{
+    font-family: 'PT Serif', serif;
+    text-align:center;
+    color:#fff;
+    text-shadow:2px 2px 3px rgba(150,150,150,0.75);
+}
+
+
+

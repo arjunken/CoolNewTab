@@ -1,0 +1,48 @@
+{
+  "manifest_version": 2,
+  "name": "Home Tab",
+  "description": "Your Browser's Home",
+  "version": "1.0",
+  "icons" : {
+    "128": "icons/ht-128.png",
+    "16": "icons/ht-16.png",
+    "24": "icons/ht-24.png",
+    "32": "icons/ht-32.png",
+    "48": "icons/ht-48.png",
+    "64": "icons/ht-64.png"
+  },
+  "chrome_url_overrides" : {
+    "newtab": "hometab.html"
+  },
+  "options_page": "options.html",
+       
+  "browser_action": {
+    "default_icon": {
+      "128": "icons/ht-128.png",
+      "16": "icons/ht-16.png",
+      "24": "icons/ht-24.png",
+      "32": "icons/ht-32.png",
+      "48": "icons/ht-48.png",
+      "64": "icons/ht-64.png"
+     },
+
+    "default_title": "Home Tab"       
+  },
+
+  "permissions": ["activeTab"],
+
+  "background": {
+    "scripts": ["./js/background.js"],
+    "persistent": false
+    },
+
+  "content_scripts":[
+      {
+        "matches":["<all_urls>"],
+        "js" : ["./js/hometab.js","./js/options.js"]   
+      }
+  ],
+
+  "content_security_policy":"script-src 'self' 'unsafe-eval' http://localhost https://code.jquery.com/jquery-3.5.1.slim.min.js https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js https://unpkg.com/@popperjs/core@2/dist/umd/popper.js; object-src 'self'"
+     
+}

@@ -1,0 +1,42 @@
+
+#taskcard,#ltckcard,#gscard, #newscard, #bmcard,#ck1card,#ck2card,#ck3card,#newscard,#hscard,#qodcard,#wodcard,#weathercard {
+    
+    border-radius: 0px;
+    margin-top: 10px;
+    text-align: center;
+    
+}
+
+div.card{
+
+    background-color: rgb(61, 61, 61);
+}
+
+#extension-options {
+    text-align: center;
+    font-style: italic;
+    font-family: cursive;
+    text-transform: capitalize;
+    color: beige;
+    
+}
+
+#savebutton{
+
+    float: right;
+    margin-bottom: 10px;
+    background-color: cadetblue;
+    color: white;
+
+}
+
+#getback{
+
+    border: none;
+    margin-bottom: 10px;
+    background-color: brown;
+    color: white;
+}
+
+
+
