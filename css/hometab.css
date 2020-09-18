@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Serif:400italic);
 
 body {
-    background: url("https://source.unsplash.com/random/1200x800") no-repeat center center fixed;
+   /* background: url("https://source.unsplash.com/random/1200x800") no-repeat center center fixed; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -22,9 +22,9 @@ background:transparent;
 
 }
 
-#taskcard,#ltckcard,#gscard, #newscard, #bmcard,#ck1card,#ck2card,#ck3card,#newscard,#hscard,#qodcard,#wodcard,#weathercard {
+#taskcard,#gscard, #newscard, #bmcard,#ck1card,#ck2card,#ck3card,#ck4card,#newscard,#hscard,#qodcard,#wodcard,#weathercard {
     
-    border-radius: 10px;
+    border-radius: 5px;
     margin-top: 10px;
     text-align: center;
 }
@@ -73,5 +73,41 @@ background:transparent;
     text-shadow:2px 2px 3px rgba(150,150,150,0.75);
 }
 
+#cardtitle{
 
+    text-align: center;
+    white-space: nowrap;
+    font-size: 12px;
+    color:grey;
+    padding-top: 2px;
+    
+}
 
+#wod-def, #wod-phonetics, #wod-pos, #wod-ex,#wod-syn, #def {
+    
+    padding: 0;
+    margin: 0;
+  
+}
+
+#wod-label{
+    font-size: smaller; 
+    font-style:italic;
+    color: brown;
+   
+}
+
+#wod-def,#wod-ex,#wod-syn {
+   font-size: small;
+   
+}
+
+#wod-link{
+    font-size: small;
+    padding-bottom: 5px;
+    padding-right: 5px;
+}
+
+#wordoftheday{
+    color: brown;
+}

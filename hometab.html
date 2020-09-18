@@ -34,111 +34,118 @@
  <!--Column-1-->
 
     <div class="col-md-2 card border-0">
-    <div id="taskcard" class="content card-body" style="background-color: beige;">
-        <h4 style="text-align: center;"> Today's Taget </h4> 
+    <div id="taskcard" style="background-color: beige;">
+        <h5 id="cardtitle"> Today's Taget </h5> 
     </div>
     </div>
   
   <!-- Column-2-->
     <div class="col-md-5 card border-0">
-    <div id="gscard" class="content card-body" style="background-color: azure;">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search Internet" aria-label="Text input with segmented dropdown button">
-            <div class="input-group-append">
-              <button type="button" class="btn btn-outline-secondary">Search</button>
-              <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="sr-only">Toggle Dropdown</span>
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-            </div>
-         </div>
+    <div id="gscard" style="background-color: azure;">
+         <h5 id="cardtitle"> Search </h5> <br>         
+             
     </div>  
     </div>
 
   <!--Column-3-->
     <div class="col-md-5 card border-0">
-    <div id="bmcard" class="content card-body" style="background-color: beige;">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search Your Bookmarks" aria-label="Type keywords" aria-describedby="button-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="search" id="button-addon2">Search</button>
-          </div> 
-        </div>
+    <div id="bmcard" style="background-color: beige;">
+        <h5 id="cardtitle">Bookmarks </h5> <br>
+              
      </div>
     </div>
  
 <!--Column-4-->   
 <div class="col-md-12 card border-0">
-  <div id="weathercard" class="card-body" style="background-color:moccasin;">
+  <div id="weathercard" style="background-color:moccasin;">
     <!-- <a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original" >NEW YORK WEATHER</a> -->
-    <h4> Weather! </h4>
+    <h5 id="cardtitle"> Weather! </h5>
   </div> 
  </div>
 
 <!--Column-5-->
  <div class="col-md-4 card border-0">
-  <div id="newscard" class="content card-body" style="background-color: beige;">
-    <h4> Top News! </h4>              
+  <div id="newscard" style="background-color: beige;">
+    <h5 id="cardtitle"> Top News! </h5>              
   </div>
  </div>
 
 <!--Column-6-->  
 <div class="col-md-4 card border-0">
-  <div id="hscard" class="content card-body" style="background-color: beige;">
-   <h2> Daily Horoscope </h2>
+  <div id="hscard" style="background-color: beige;">
+   <h5 id="cardtitle"> Daily Horoscope </h5>
   </div>
 </div>
 
 <!--Column-7-->  
  <div class="col-md-4 card border-0">
-   <div id="wodcard" class="card-body" style="background-color: beige;">
-      <h4 style="text-align: center;"> Word of the day </h4>
-      <img id="ico" />
-      <div id="temperature"></div>
-      <div id="status"></div>
+   <div id="wodcard" style="background-color: beige;">
+      <h5 id="cardtitle"> Word of the day </h5> 
+      <h5 id="wordoftheday">#</h5> 
+      <p id="wod-phonetics">#</p>
+      <p id="wod-pos"> </p>
+    <div class="row content container m-0 p-1 pb-0"> 
+       <div class="col-md-4 p-0">
+         <p id="wod-label" > Definition:</p>
+       </div>
+       <div class="col-md-8 p-0">
+        <p id="wod-def">#</p> 
+      </div>
+    </div>       
+    <div class="row content container m-0 p-1 pb-0"> 
+      <div class="col-md-4 p-0">
+        <p id="wod-label" > Example:</p>
+      </div>
+      <div class="col-md-8 p-0">
+        <p id="wod-ex">#</p>
+     </div>
+   </div>  
+   <div class="row content container m-0 p-1 pb-0"> 
+    <div class="col-md-4 p-0">
+      <p id="wod-label" > Synonyms:</p>
+    </div>
+    <div class="col-md-8 p-0">
+      <p id="wod-syn"></p>
+   </div>
+   </div> 
+   <a id="wod-link" href="#"></a>
    </div>
  </div>
 
 <!--Column-8-->
 <div class="col-md-3 card border-0">
-  <div id="ltckcard" class="card-body" style="background-color: aliceblue;">
-     <h3> Local Time </h3> <br>
+  <div id="ck1card" style="background-color: beige;">
+     <h5 id="cardtitle"> Clock 1 </h5> <br>
      <h2 id="currenttime"> </h2>
   </div>
 </div>  
 
 <!--Column-9-->
 <div class="col-md-3 card border-0">
-  <div id="ck1card" class="card-body" style="background-color: beige;">
-     <h4> Clock 2 </h4>
+  <div id="ck2card" style="background-color: beige;">
+     <h5 id="cardtitle"> Clock 2 </h5>
   </div>
 </div>
 
 <!--Column-10-->
 <div class="col-md-3 card border-0">
-  <div id="ck2card" class="card-body" style="background-color: beige;">
-     <h4> Clock 3 </h4>
+  <div id="ck3card" style="background-color: beige;">
+     <h5 id="cardtitle"> Clock 3 </h5>
   </div>
 </div>
 
 <!--Column-11-->
 <div class="col-md-3 card border-0">
-  <div id="ck3card" class="card-body" style="background-color: beige;">
-     <h4> Clock 4 </h4>
+  <div id="ck4card" style="background-color: beige;">
+     <h5 id="cardtitle"> Clock 4 </h5>
   </div>
 </div>
 
       
 <!--Column-12-->  
 <div class="col-md-12 card border-0">
-  <div id="qodcard" class="card-body" style="background-color:peachpuff;" >
-       <h3 id="qod"> QUOTE OF THE DAY </h3>
+  <div id="qodcard" style="background-color:peachpuff;" >
+       <h5 id="cardtitle"> QUOTE OF THE DAY </h5>
        <h3 id="quoteblock"></h3>
        <h5 id="author"></h5>
   </div>
