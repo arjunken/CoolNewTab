@@ -13,13 +13,7 @@
   rawFile.send(null);
   }
 
-  var date_diff_indays = function(date1, date2) {
-    var dt1 = new Date(date1);
-    var dt2 = new Date(date2);
-    return Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) - Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()) ) /(1000 * 60 * 60 * 24));
-  }
-
-  
+    
 //****** INITIALIZE DATA WHEN EXTENSION IS INSTALLED */
 chrome.runtime.onInstalled.addListener(function() {
     var today = new Date();
@@ -34,22 +28,7 @@ chrome.runtime.onInstalled.addListener(function() {
     });
 
     //** Words Data */
-    readTextFile("../data/MasterWordList.json", function(text){
-      let data = JSON.parse(text);
-      let index;
-      let tenwords = new Array(10);
-      for(var i=0;i<10;i++){ 
-         index = Math.floor(Math.random() * data.length);
-        tenwords[i] = data[index].FIELD1;
-        } 
-      chrome.storage.sync.set({'todayswords': tenwords}, function() {
-      console.log('Initial words saved');           
-      });
-    });
-
-
-
-
+   
   });
 
 //****** CODE TO MAKE HOMETAB AS DEFAULT NEW TAB  */
@@ -86,17 +65,7 @@ chrome.tabs.onCreated.addListener(function(tab){
         });
 
       //get ten new words and update the storage
-
-      var wdIndex = 10* date_diff_indays(idate, new Date());
-      let index;
-      let tenwords = new Array(10);
-      for(var i=0;i<10;i++){ 
-         index = Math.floor(Math.random() * (data.length - wdIndex) ) + wdIndex;         
-         tenwords[i] = data[index].FIELD1;
-        } 
-      chrome.storage.sync.set({'todayswords': tenwords}, function() {
-      console.log('words updated for today!');           
-      });
+          
 
 
     } 

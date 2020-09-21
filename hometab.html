@@ -31,125 +31,61 @@
        
    
 <div class="row content flex-fill">
- <!--Column-1-->
-
-    <div class="col-md-2 card border-0">
-    <div id="taskcard" style="background-color: beige;">
-        <h5 id="cardtitle"> Today's Taget </h5> 
-    </div>
-    </div>
-  
-  <!-- Column-2-->
-    <div class="col-md-5 card border-0">
-    <div id="gscard" style="background-color: azure;">
-         <h5 id="cardtitle"> Search </h5> <br>         
-             
-    </div>  
-    </div>
-
-  <!--Column-3-->
-    <div class="col-md-5 card border-0">
-    <div id="bmcard" style="background-color: beige;">
-        <h5 id="cardtitle">Bookmarks </h5> <br>
-              
-     </div>
-    </div>
- 
-<!--Column-4-->   
-<div class="col-md-12 card border-0">
-  <div id="weathercard" style="background-color:moccasin;">
-    <!-- <a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original" >NEW YORK WEATHER</a> -->
-    <h5 id="cardtitle"> Weather! </h5>
-  </div> 
- </div>
-
-<!--Column-5-->
- <div class="col-md-4 card border-0">
-  <div id="newscard" style="background-color: beige;">
-    <h5 id="cardtitle"> Top News! </h5>              
-  </div>
- </div>
-
-<!--Column-6-->  
-<div class="col-md-4 card border-0">
-  <div id="hscard" style="background-color: beige;">
-   <h5 id="cardtitle"> Daily Horoscope </h5>
-  </div>
-</div>
-
-<!--Column-7-->  
- <div class="col-md-4 card border-0">
-   <div id="wodcard" style="background-color: beige;">
-      <h5 id="cardtitle"> Word of the day </h5> 
-      <h5 id="wordoftheday">#</h5> 
-      <p id="wod-phonetics">#</p>
-      <p id="wod-pos"> </p>
-    <div class="row content container m-0 p-1 pb-0"> 
-       <div class="col-md-4 p-0">
-         <p id="wod-label" > Definition:</p>
-       </div>
-       <div class="col-md-8 p-0">
-        <p id="wod-def">#</p> 
-      </div>
-    </div>       
-    <div class="row content container m-0 p-1 pb-0"> 
-      <div class="col-md-4 p-0">
-        <p id="wod-label" > Example:</p>
-      </div>
-      <div class="col-md-8 p-0">
-        <p id="wod-ex">#</p>
-     </div>
-   </div>  
-   <div class="row content container m-0 p-1 pb-0"> 
-    <div class="col-md-4 p-0">
-      <p id="wod-label" > Synonyms:</p>
-    </div>
-    <div class="col-md-8 p-0">
-      <p id="wod-syn"></p>
-   </div>
-   </div> 
-   <a id="wod-link" href="#"></a>
-   </div>
- </div>
-
-<!--Column-8-->
-<div class="col-md-3 card border-0">
-  <div id="ck1card" style="background-color: beige;">
-     <h5 id="cardtitle"> Clock 1 </h5> <br>
-     <h2 id="currenttime"> </h2>
-  </div>
-</div>  
-
-<!--Column-9-->
-<div class="col-md-3 card border-0">
-  <div id="ck2card" style="background-color: beige;">
-     <h5 id="cardtitle"> Clock 2 </h5>
-  </div>
-</div>
-
-<!--Column-10-->
-<div class="col-md-3 card border-0">
-  <div id="ck3card" style="background-color: beige;">
-     <h5 id="cardtitle"> Clock 3 </h5>
-  </div>
-</div>
-
-<!--Column-11-->
-<div class="col-md-3 card border-0">
-  <div id="ck4card" style="background-color: beige;">
-     <h5 id="cardtitle"> Clock 4 </h5>
-  </div>
-</div>
-
-      
-<!--Column-12-->  
-<div class="col-md-12 card border-0">
-  <div id="qodcard" style="background-color:peachpuff;" >
-       <h5 id="cardtitle"> QUOTE OF THE DAY </h5>
+         
+<!--Column-1-->  
+<div id="divbox" class="col-md-4 card border-0 mt-2">
+  <div id="widget-1" style="background-color:peachpuff;">
+       <h5 id="widgetTitle"> QUOTE OF THE DAY </h5>
        <h3 id="quoteblock"></h3>
        <h5 id="author"></h5>
+       <!-- <input type="image" id="settings" src="./images/sound-1.png" data-toggle="modal" data-target="#AddWidgetModal"> -->
   </div>
 </div>
+
+<!--Add Widgets Functionality-->
+
+<div id="addWidgetBox" class="col-md-2 card border-0 mt-2">
+  <div id="addWidgetDiv">
+    <button id="addWidgetBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddWidgetModal">+ Add Widget</button>
+  </div>
+</div>
+
+<div class="modal fade" id="AddWidgetModal" tabindex="-1" role="dialog" aria-labelledby="AddWidgetModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Widget</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         
+        <form name="wform">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Widget Name:</label>
+            <input name="wname" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="customRange2">Size:</label>
+            <input name="wwidth" type="range" class="custom-range" min="2" max="12" step="1">
+          </div>
+          <div class="form-group" style="width: 20%;">
+            <label for="recipient-name" class="col-form-label">Pick a Color:</label>
+            <input name="wcolor" type="color" class="form-control">
+          </div>           
+       </form>
+        
+
+      </div>
+      <div class="modal-footer">
+        <button id="widgetSave" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 </div>
 </main> 
