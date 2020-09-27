@@ -39,7 +39,7 @@
   "content_scripts":[
       {
         "matches":["<all_urls>"],
-        "js" : ["./js/hometab.js","./js/options.js"]   
+        "js" : ["./js/hometab.js","./js/options.js","./js/bookmarks.js"]   
       }
   ],
 

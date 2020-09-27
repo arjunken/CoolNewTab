@@ -10,86 +10,91 @@
     
     <!-- Bootstrap required files inclusion -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
-    <script src="./js/hometab.js" defer></script>
+    <script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script>
+    <script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.min.js"></script>
+    <script src="./js/hometab.js"defer></script>
     
 </head>
 
 <body>
 
-<main class="main container">
-<!--Main Bootstrap Grid-->
+  <div class="container-fluid pl-5">
+  
+  <!--Top Extension Title and Local Time Display-->
 
- <!--Greeting-->
- <div class="row">
-  <h3 class="col-md-6"><mark id="extheading">Home Tab!</mark> </h3>
-  <h5 class="col-md-6"><mark id="timedisplay"> </mark></h5>
+ <!--Add Widgets Functionality-->
+ <div class="row container-fluid pr-0"> 
+   <div class="col-sm-4 m-auto text-center"> <button id="addWidgetBtn" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#AddWidgetModal" >+Add Widget</button>  </div>
+   <div class="col-sm-4 m-auto"> <p id="timedisplay">Current Time </p> </div>
+   <div class="col-sm-4 m-auto"> <p id="extheading"><mark> Widzets </mark> </p> </div>
  </div>
-       
-   
-<div class="row content flex-fill">
-         
-<!--Column-1-->  
-<div id="divbox" class="col-md-4 card border-0 mt-2">
-  <div id="widget-1" style="background-color:peachpuff;">
-       <h5 id="widgetTitle"> QUOTE OF THE DAY </h5>
-       <h3 id="quoteblock"></h3>
-       <h5 id="author"></h5>
-       <!-- <input type="image" id="settings" src="./images/sound-1.png" data-toggle="modal" data-target="#AddWidgetModal"> -->
+  <!-- Main grid of widgets    -->  
+  <div class="grid">
+    
+    <!-- <div class="grid-item grid-item--width2"style="text-align:center;padding:1em 0;"> <h4><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/6173331"><span style="color:gray;">Current local time in</span><br />Vancouver, Canada</a></h4> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=America%2FVancouver" width="100%" height="90" frameborder="0" seamless></iframe> </div> -->
+     
   </div>
+
 </div>
 
-<!--Add Widgets Functionality-->
 
-<div id="addWidgetBox" class="col-md-2 card border-0 mt-2">
-  <div id="addWidgetDiv">
-    <button id="addWidgetBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddWidgetModal">+ Add Widget</button>
-  </div>
-</div>
-
+<!--Add Widget Modal Window-->
 <div class="modal fade" id="AddWidgetModal" tabindex="-1" role="dialog" aria-labelledby="AddWidgetModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
+    <div class="modal-content m-2">
+      <div class="modal-header p-2" style="background-color: cadetblue;">
         <h5 class="modal-title" id="exampleModalLabel">Add New Widget</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body p-2">
          
         <form name="wform">
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Widget Name:</label>
-            <input name="wname" type="text" class="form-control">
+            <label for="widget-name" class="col-form-label">Widget Name:</label>
+            <input id="widget-name" name="wname" type="text" class="form-control">
           </div>
-          <div class="form-group">
-            <label for="customRange2">Size:</label>
-            <input name="wwidth" type="range" class="custom-range" min="2" max="12" step="1">
+         
+          <div class="row">
+          <div class="col-md-6">
+          <div class="form-group p-1 mb-1">
+            <label id="wsizelabel" for="custom-range" class="col-form-label pb-1">Size:</label>
+            <input id="wsizelabel" name="wwidth" type="range" class="custom-range" min="1" max="4" step="1">
+            
           </div>
-          <div class="form-group" style="width: 20%;">
-            <label for="recipient-name" class="col-form-label">Pick a Color:</label>
-            <input name="wcolor" type="color" class="form-control">
-          </div>           
+          </div>
+ 
+          <div class="col-md-6 float-sm-right">
+          <div class="form-group p-1 mb-1">
+            <label for="colorpick" class="col-form-label p-0">Pick a Color:</label>
+            <input id="colorpick" name="wcolor" type="color" value="#ffffff" class="form-control" style="width: 30%;">
+          </div> 
+          </div>
+          </div>  
+          
+          <select class="custom-select">
+            <option selected>Select Widgets:</option>
+            <option value="1">Bookmarks</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+
        </form>
         
 
       </div>
       <div class="modal-footer">
-        <button id="widgetSave" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+        <button id="widgetSave" type="button" class="btn btn-primary" data-dismiss="modal">Add Widget</button>
       </div>
     </div>
   </div>
 </div>
 
-
-
-</div>
-</main> 
-
 </body>
+
 
 </html>
