@@ -5,35 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>New Tab</title>
-    <!-- Local CSS files inclusion -->
     <link rel="stylesheet" href="./css/hometab.css" type="text/css" media="all">
-    
-    <!-- Bootstrap required files inclusion -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script>
     <script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.min.js"></script>
     <script src="./js/hometab.js"defer></script>
+    <script async src="https://cse.google.com/cse.js?cx=f58e5e3baf748ab81"></script>
     
 </head>
 
 <body>
 
-  <div class="container-fluid pl-5">
+  <div class="container-fluid">
   
   <!--Top Extension Title and Local Time Display-->
 
  <!--Add Widgets Functionality-->
- <div class="row container-fluid pr-0"> 
-   <div class="col-sm-4 m-auto text-center"> <button id="addWidgetBtn" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#AddWidgetModal" >+Add Widget</button>  </div>
-   <div class="col-sm-4 m-auto"> <p id="timedisplay">Current Time </p> </div>
-   <div class="col-sm-4 m-auto"> <p id="extheading"><mark> Widzets </mark> </p> </div>
+
+ <div class="row sticky-top pr-0" style="background-color:#ffffff"> 
+  <button id="SearchBtn" class="btn btn-primary btn-sm">Search</button>
+  <div id="AddWidgetBtn" class="dropdown">
+    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Widgets
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#AddWidgetModal" >Add Widget</a>
+      <a class="dropdown-item" href="#">Rearrange Widgets</a>
+      <a class="dropdown-item" href="#">Remove Widget</a>
+    </div>
+  </div>
+
+  <button id="BookmarkBtn" class="btn btn-primary btn-sm">Bookmarks</button>
+   
  </div>
   <!-- Main grid of widgets    -->  
   <div class="grid">
-    
+
+
+     
+     
     <!-- <div class="grid-item grid-item--width2"style="text-align:center;padding:1em 0;"> <h4><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/6173331"><span style="color:gray;">Current local time in</span><br />Vancouver, Canada</a></h4> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=America%2FVancouver" width="100%" height="90" frameborder="0" seamless></iframe> </div> -->
      
   </div>

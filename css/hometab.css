@@ -7,39 +7,24 @@ body {
     background-size: cover;
     -o-background-size: cover;
     opacity: 0.90;
+    background-color:#f7f9fb;
     
     }
-  
-#extheading, #timedisplay{
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  font-size: larger;
-  }
 
-  #addWidgetBtn{
+    
+  #AddWidgetBtn,#SearchBtn,#BookmarkBtn{
+    margin-left: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
+    
  }
 
- @media screen and (max-width: 580px) {
-  #extheading, #timedisplay {
-    margin-bottom: 20px;
-    }
-  }
-
-#extheading{
-  -webkit-text-stroke:1px white;
-  font-style: italic;
-  font-family: cursive;
-  font-size: 18pt;
-}
-
-/* ---- grid ---- */
+ /* ---- grid ---- */
 
 .grid {
   max-width: 100%;
   margin: auto;
+  padding-top: 10px;
 }
 
 *, *:after, *:before {
@@ -176,15 +161,16 @@ p#widgetTitle{
   background:transparent;
   border: solid;
   border-width: thin;
+  border-color: white;
   /* box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1), 0.3em 0.3em 1em rgba(0,0,0,0.3);    */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 1px 3px 0 rgba(255, 253, 253, 0.918), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
   
   }
    
 /* Add hovering, dragging and placeholder effects to the grid item */
 
   .grid-item:hover {
-    border-color: hsl(0, 0%, 100%);
+    border-color: rgb(172, 27, 27);
     cursor: move;
   }
 

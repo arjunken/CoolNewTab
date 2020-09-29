@@ -1,7 +1,7 @@
 
 jQuery(document).ready(function($) {
 
-  // //**Local Clock */
+// //**Local Clock */
 const CURRENTTIME = document.querySelector("#timedisplay");
 
 function runClock() {
