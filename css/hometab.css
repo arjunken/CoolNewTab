@@ -1,7 +1,7 @@
 * { box-sizing: border-box; }
 
 body {
-    /* background: url("https://source.unsplash.com/random/1200x800") no-repeat center center fixed;  */
+     /* background: url("https://source.unsplash.com/random/1200x800") no-repeat center center fixed;  */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -10,6 +10,19 @@ body {
     background-color:#f7f9fb;
     
     }
+
+  .center{
+    margin: 0;
+    position: absolute;
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
+    background-color: white;
+  }
+  
+  
 
     
   #AddWidgetBtn,#SearchBtn,#BookmarkBtn{
@@ -199,4 +212,9 @@ p#widgetTitle{
   color:grey;
   font-size:1em;
   text-shadow:2px 2px 3px rgba(150,150,150,0.75);
+}
+
+.form-control:focus {
+  border-color: #6265e4 !important;
+  box-shadow: 0 0 5px rgba(98, 101, 228, 1) !important;
 }
