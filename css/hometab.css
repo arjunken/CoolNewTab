@@ -10,29 +10,39 @@ body {
     background-color:#f7f9fb;
     
     }
-
-  .center{
-    margin: 0;
-    position: absolute;
-    width: 40%;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); 
-    background-color: white;
-  }
-  
-  
-
-    
-  #AddWidgetBtn,#SearchBtn,#BookmarkBtn{
-    margin-left: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    
- }
+ 
 
  /* ---- grid ---- */
+
+ /* card styles */
+ #card-header-text{
+  float: left;
+  margin: auto;
+ }
+
+ #edit-icon {
+  float: right;margin: 
+  auto;padding-right: 5px;
+ }
+ 
+ #trash-icon{
+  float: right;
+  margin: auto;
+ }
+ 
+ #trash-icon:hover{
+   background:url("../Icons/trash-can-1.png") no-repeat;
+   cursor: pointer;
+ }
+ 
+#edit-icon:hover{
+  background:url("../Icons/edit-1.png") no-repeat;
+  cursor: pointer;
+}
+
+#w-sm,#w-md,#w-bg,#w-bn{
+  cursor: pointer;
+}
 
 .grid {
   max-width: 100%;
@@ -137,38 +147,6 @@ body {
       }
   }
 
-#quoteblock{
-  font-family: 'PT Serif', serif;
-  text-shadow:2px 2px 3px rgba(150,150,150,0.75);
-  font-size:1em;
-  padding: 0 10px 0 10px;
-  }
-  
-#author{
-  font-family: 'PT Serif', serif;
-  text-align:center;
-  color:grey;
-  font-size:1em;
-  text-shadow:2px 2px 3px rgba(150,150,150,0.75);
-}
-
-#widgetTitle{
-
-  text-align: left;
-  white-space: nowrap;
-  font-size: 12px;
-  color:white;
-  padding: 5px;
-  background-color: darkslategray;
-  
-}
-
-p#widgetTitle{
-
-  margin-bottom: 5px;
-  font-weight: bold;
-  
-}
 
 .grid-item {
   background:transparent;
@@ -182,10 +160,11 @@ p#widgetTitle{
    
 /* Add hovering, dragging and placeholder effects to the grid item */
 
-  .grid-item:hover {
+  /* .grid-item:hover {
     border-color: rgb(172, 27, 27);
     cursor: move;
-  }
+  } */
+
 
   .grid-item.is-dragging,.grid-item.is-positioning-post-drag {
   background: #C90;
@@ -214,7 +193,3 @@ p#widgetTitle{
   text-shadow:2px 2px 3px rgba(150,150,150,0.75);
 }
 
-.form-control:focus {
-  border-color: #6265e4 !important;
-  box-shadow: 0 0 5px rgba(98, 101, 228, 1) !important;
-}

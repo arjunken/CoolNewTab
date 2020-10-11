@@ -16,20 +16,20 @@ let month = date.getMonth();
 var interval = setInterval(runClock, 1000);
 
 //Navigation Functionality
-$('#wzToggle').css('display','none');
+$('#plusBtn').css('display','none');
 $(".grid").css('display','none');
 $(".BookmarkPage").css('display','none');
 
 $("#SearchBtn").click(function(){
   $(".SearchPage").css('display','');
   $(".grid").css('display','none');
-  $('#wzToggle').css('display','none');
+  $('#plusBtn').css('display','none');
   $('.BookmarkPage').css('display','none');
   $("#searchbox").focus();
 })
 $("#WidgetsBtn").click(function(){
   $(".grid").css('display','');
-  $('#wzToggle').css('display','');
+  $('#plusBtn').css('display','');
   $(".SearchPage").css('display','none');
   $('.BookmarkPage').css('display','none');
 })
@@ -37,7 +37,7 @@ $("#BookmarkBtn").click(function(){
   $('.BookmarkPage').css('display','');
   $(".SearchPage").css('display','none');
   $(".grid").css('display','none');
-  $('#wzToggle').css('display','none'); 
+  $('#plusBtn').css('display','none'); 
 })
 
 // Functionality for Search Page
@@ -64,27 +64,63 @@ var $grid = $('.grid').packery({
   initLayout: true
 });
 
-var draggies = [];
-var isDrag = true;
-function makeDraggable(){
-  $grid.find('.grid-item').each( function( i, gridItem ) {
-    var draggie = new Draggabilly( gridItem );
-     // bind drag events to Packery
-     draggies.push( draggie );
-    $grid.packery( 'bindDraggabillyEvents', draggie );    
+// Add widgets
+var wcolor = 'white';
+var wwidth = 1;
+$("#colorpick").css("width","15%");
+$("input[name='wsize']").click(function(){
+    var radioValue = $("input[name='wsize']:checked").val();
+    if(radioValue == 'small'){
+      $("#colorpick").css("width","15%");
+      wwidth=1;
+    }
+    if(radioValue == 'medium'){
+      $("#colorpick").css("width","30%");
+      wwidth=2;
+    }
+    if(radioValue == 'big'){
+      $("#colorpick").css("width","50%");
+      wwidth=3;
+    }
+    if(radioValue == 'banner'){
+      $("#colorpick").css("width","75%");
+      wwidth=4;
+    }
+   
   });
-  };
+  
+$("#colorpick").blur(function(){
+wcolor = $("#colorpick").val();
+$("#size-preview").css("fill",wcolor);
+});
 
-// create widgets
+
 $('#widgetSave').on( 'click', function() {
   let n = $(".widget").length+1;
-  let wcolor = document.forms["wform"]["wcolor"].value;
-  let wwidth = document.forms["wform"]["wwidth"].value;
-  if(wwidth==1){
-    var $items = ('<div id="widget-'+n+'" class="grid-item" style="background-color:'+ wcolor +';"></div>');   
-  } else {
-    var $items = ('<div id="widget-'+n+'" class="grid-item grid-item--width'+ wwidth +'" style="background-color:'+ wcolor +';"></div>');
+  let wname = $("#wname").val();
+  
+  if(wwidth==1){    
+  var $items =  ('<div id="widget-'+n+'" class="grid-item card">'+
+                  '<div class="card-header p-1">'+ 
+                  '<h6 id="card-header-text">'+wname+'</h6>'+
+                  '<img id="trash-icon" src="Icons/trash-can.png">'+ 
+                  '<img id="edit-icon" src="Icons/edit.png">'+ 
+                  '</div>'+
+                  '<div class="card-body p-1" style="background-color:'+wcolor+'; opacity:0.5"><p> </p>'+
+                  '</div>'+
+                  '</div>');
+  } else{
+    var $items =  ('<div id="widget-'+n+'" class="grid-item grid-item--width'+wwidth+' card">'+
+    '<div class="card-header p-1">'+ 
+    '<h6 id="card-header-text">'+wname+'</h6>'+
+    '<img id="trash-icon" src="Icons/trash-can.png">'+ 
+    '<img id="edit-icon" src="Icons/edit.png">'+ 
+    '</div>'+
+    '<div class="card-body p-1" style="background-color:'+wcolor+'; opacity:0.5"><p> </p>'+
+    '</div>'+
+    '</div>');
   }
+
   $grid.prepend( $items )    
   $grid.packery( 'prepended', $items );
   $grid.packery('destroy');
@@ -92,28 +128,33 @@ $('#widgetSave').on( 'click', function() {
     itemSelector: '.grid-item',
     columnWidth: 20,
     initLayout: true // disable initial layout
-   });
-  // makeDraggable();  
+   });  
+   
 });
+
+
+//Delete Widgets
+
+
+// $(document).keyup(function(e) {
+//   if (e.keyCode === 27) { 
+//    //Do stuff here
+  
+//  }
+// });
+
+
 
 //trigger draggable only when Rearrange button is clicked
- $("#rearrange").click(function(){
-  if(isDrag){
-    $grid.packery('destroy');
-    $grid = $('.grid').packery({
-      itemSelector: '.grid-item',
-      columnWidth: 20,
-      initLayout: true // disable initial layout
-     });     
-    makeDraggable();
-  } else{
-    draggies.forEach( function( draggie ) {
-      draggie[0]();
-    });
-  }
-  // switch flag
-  isDrag = !isDrag;
-});
 
+// function makeDraggable(){
+//   $grid.find('.grid-item').each( function( i, gridItem ) {
+//     var draggie = new Draggabilly( gridItem );
+//      // bind drag events to Packery     
+//     $grid.packery( 'bindDraggabillyEvents', draggie );    
+//   });
+//   };
+//   makeDraggable(); 
 
+  
 });

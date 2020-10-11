@@ -26,7 +26,43 @@
  <!--Add Widgets Functionality-->
 
  <div class="row sticky-top pr-0" style="background-color:#ffffff"> 
-  <button id="SearchBtn" class="btn btn-primary btn-sm">Search</button>
+
+   <div class="row container-fluid"> 
+
+    <div class="col-md-3">
+      <button id="WidgetsBtn" type="button" class="btn btn-primary btn-sm rounded-0 mt-2" data-toggle="modal" data-target="#AddWidgetModal">+New Widget</button>
+    </div>
+    
+    <div class="col-md-6">
+
+        <!-- Search Box -->
+          <div class="col-md-12 input-group mt-3 p-0">
+            <input id="searchbox" type="text" class="form-control rounded-0 mb-2" placeholder="Search" aria-label="Text input with dropdown button" autofocus>
+            <div class="input-group-append pr-0">
+              <select id="optionsbox" class="form-control rounded-0">
+                <option selected="selected">Web Search</option>
+                <option>Images</option>
+                <option>Videos</option>
+                <option>Stocks</option>
+              </select>
+            </div>
+          </div>        
+        
+      </div>
+    
+    <div class="col-md-3">
+
+    </div> 
+
+      <button id="BookmarkBtn" class="btn btn-primary btn-sm rounded-0 ml-3 mt-1 mb-2">Page 1</button> 
+          
+      <button id="SearchBtn" class="btn btn-primary btn-sm rounded-0 ml-3 mt-1 mb-2">Page 2</button> 
+
+   </div>
+
+
+
+ 
 
   <!-- {"searchParams":{"bing":"https:\/\/www.bing.com\/search?q={KEYWORD}",
   "bing2":"https:\/\/www.surfitnow.xyz\/results.aspx?gd=SY1001959&n=5000&searchsource=69&q={KEYWORD}",
@@ -36,46 +72,21 @@
   "duckduckgo":"https:\/\/duckduckgo.com\/?q={KEYWORD}"}} -->
   
 
-  <div id="AddWidgetBtn" class="btn-group">
-    <button id="WidgetsBtn" type="button" class="btn btn-primary btn-sm">Widgets</button>
-    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="sr-only">Toggle Dropdown</span>
-    </button>
-    <div id="wzToggle" class="dropdown-menu">
-      <input type="button" class="dropdown-item" data-toggle="modal" data-target="#AddWidgetModal" value="Add"> 
-      <input id="rearrange" type="button" class="dropdown-item" value="Rearrange">
-      <input type="button" class="dropdown-item" value="Delete">
-      <input type="button" class="dropdown-item" value="Edit">
-    </div>
+ 
 
-  </div>
+ 
 
-  <button id="BookmarkBtn" class="btn btn-primary btn-sm">Bookmarks</button>
-   
+  
+
+
+    
  </div>
   <!-- Main grid of widgets    -->  
   <div class="grid">
-     
-  </div>
-  <!-- Search page content -->
-  <div class="SearchPage"> 
-    <div class="input-group center">
-      <input id="searchbox" type="text" class="form-control rounded-0" placeholder="Search" aria-label="Text input with dropdown button" autofocus>
-      <div class="input-group-append">
-        <select id="optionsbox" class="form-control rounded-0">
-          <option selected="selected">Web Search</option>
-          <option>Images</option>
-          <option>Videos</option>
-          <option>Stocks</option>
-        </select>
-        </div>
-      </div>
-    </div>
-    
-  </div>
-  <div class="BookmarkPage"> <h2>This is Bookmark Page </h2></div>
-</div>
 
+  </div>
+    
+ 
 
 <!--Add Widget Modal Window-->
 <div class="modal fade" id="AddWidgetModal" tabindex="-1" role="dialog" aria-labelledby="AddWidgetModalLabel" aria-hidden="true">
@@ -88,30 +99,31 @@
         </button>
       </div>
       <div class="modal-body p-2">
-         
-        <form name="wform">
-          <div class="form-group">
-            <label for="widget-name" class="col-form-label">Widget Name:</label>
-            <input id="widget-name" name="wname" type="text" class="form-control">
-          </div>
-         
+     
+        <form id="wform" name="wform">
           <div class="row">
-          <div class="col-md-6">
-          <div class="form-group p-1 mb-1">
-            <label id="wsizelabel" for="custom-range" class="col-form-label pb-1">Size:</label>
-            <input id="wsizelabel" name="wwidth" type="range" class="custom-range" min="1" max="4" step="1">
+          <div class="col-md-12">
+            <input id="wname" type="text" class="form-control" id="wname" placeholder="Enter Widget Name" name="wname">
+          </div>
+          <div class="col-md-12">
+            <div class="form-group p-1 mb-1">
+            <label for="colorpick" class="col-form-label p-0">Pick Size and Color:</label> &ensp;
             
-          </div>
-          </div>
- 
-          <div class="col-md-6 float-sm-right">
-          <div class="form-group p-1 mb-1">
-            <label for="colorpick" class="col-form-label p-0">Pick a Color:</label>
-            <input id="colorpick" name="wcolor" type="color" value="#ffffff" class="form-control" style="width: 30%;">
+            <input id="w-sm" type="radio" name="wsize" value="small" checked>
+            <label id="w-sm" for="w-sm">Small</label> &nbsp;
+            <input type="radio" id="w-md" name="wsize" value="medium">
+            <label id="w-sm" for="w-md">Medium</label> &nbsp;
+            <input type="radio" id="w-bg" name="wsize" value="big">
+            <label id="w-sm" for="w-bg">Big</label> &nbsp;
+            <input type="radio" id="w-bn" name="wsize" value="banner">
+            <label id="w-sm" for="w-bn">Banner</label>
+
+
+            <input id="colorpick" name="wcolor" type="color" value="#ffffff" class="form-control p-0 border-0 rounded-0" >
+            </div> 
           </div> 
-          </div>
-          </div>  
-          
+          </div>    
+                               
           <select class="custom-select">
             <option selected>Select Widgets:</option>
             <option value="1">Bookmarks</option>
@@ -128,6 +140,9 @@
       </div>
     </div>
   </div>
+</div>
+
+
 </div>
 
 </body>
