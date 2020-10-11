@@ -12,33 +12,16 @@ let month = date.getMonth();
 
  $("#timedisplay").text(date.toDateString() + " " + date.toLocaleTimeString());
 }
-
 var interval = setInterval(runClock, 1000);
 
-//Navigation Functionality
-$('#plusBtn').css('display','none');
-$(".grid").css('display','none');
-$(".BookmarkPage").css('display','none');
-
-$("#SearchBtn").click(function(){
-  $(".SearchPage").css('display','');
-  $(".grid").css('display','none');
-  $('#plusBtn').css('display','none');
-  $('.BookmarkPage').css('display','none');
-  $("#searchbox").focus();
-})
-$("#WidgetsBtn").click(function(){
-  $(".grid").css('display','');
-  $('#plusBtn').css('display','');
-  $(".SearchPage").css('display','none');
-  $('.BookmarkPage').css('display','none');
-})
-$("#BookmarkBtn").click(function(){
-  $('.BookmarkPage').css('display','');
-  $(".SearchPage").css('display','none');
-  $(".grid").css('display','none');
-  $('#plusBtn').css('display','none'); 
-})
+// Functionality to add widget pages
+pagenum=2;
+$("#AddPageBtn").click(function(){
+  
+  var $pageEl = ('<button id="page'+pagenum+'" class="btn btn-primary btn-sm rounded-0 ml-3 mt-1 mb-2">Page '+pagenum+'</button>');
+  $($pageEl).insertBefore("#AddPageBtn");
+  pagenum++;  
+});
 
 // Functionality for Search Page
 
@@ -55,6 +38,9 @@ $("#searchbox").on('keyup', function (e) {
       
   }
 });
+
+// Functionality to add pages
+
 
 
 // packery and draggable initialization
