@@ -1,27 +1,6 @@
 
 jQuery(document).ready(function($) {
 
-// //**Local Clock */
-const CURRENTTIME = document.querySelector("#timedisplay");
-
-function runClock() {
-var date = new Date();
-
-let day = date.getDay();
-let month = date.getMonth();
-
- $("#timedisplay").text(date.toDateString() + " " + date.toLocaleTimeString());
-}
-var interval = setInterval(runClock, 1000);
-
-// Functionality to add widget pages
-pagenum=2;
-$("#AddPageBtn").click(function(){
-  
-  var $pageEl = ('<button id="page'+pagenum+'" class="btn btn-primary btn-sm rounded-0 ml-3 mt-1 mb-2">Page '+pagenum+'</button>');
-  $($pageEl).insertBefore("#AddPageBtn");
-  pagenum++;  
-});
 
 // Functionality for Search Page
 
@@ -39,8 +18,52 @@ $("#searchbox").on('keyup', function (e) {
   }
 });
 
-// Functionality to add pages
 
+// Functionality to toggle pages
+$(".nav").on('click','li',function(){
+
+  $(this).children("button").removeClass("btn-secondary");
+  $(this).children("button").addClass("btn-primary");
+  $(this).siblings().children("button").removeClass("btn-primary");
+  $(this).siblings().children("button").addClass("btn-secondary");
+
+});
+
+$('li').click(function(){
+  
+  $(this).addClass('active')
+       .siblings()
+       .removeClass('active');
+    
+});
+
+$('.bkm-btn').click(function(){
+ $('#AddBtn').removeClass('icon-calendar');
+ $('#AddBtn').removeClass('icon-edit');
+ $('#AddBtn').removeClass('icon-check');
+ $('#AddBtn').addClass('icon-bookmark');
+});
+
+$('.wgt-btn').click(function(){
+  $('#AddBtn').removeClass('icon-bookmark');
+  $('#AddBtn').removeClass('icon-edit');
+  $('#AddBtn').removeClass('icon-check');
+  $('#AddBtn').addClass('icon-calendar');
+ });
+
+ $('.td-btn').click(function(){
+  $('#AddBtn').removeClass('icon-bookmark');
+  $('#AddBtn').removeClass('icon-edit');
+  $('#AddBtn').removeClass('icon-check');
+  $('#AddBtn').addClass('icon-check');
+ });
+
+ $('.nt-btn').click(function(){
+  $('#AddBtn').removeClass('icon-calendar');
+  $('#AddBtn').removeClass('icon-bookmark');
+  $('#AddBtn').removeClass('icon-check');
+  $('#AddBtn').addClass('icon-edit');
+ });
 
 
 // packery and draggable initialization
