@@ -34,37 +34,58 @@ $('li').click(function(){
   $(this).addClass('active')
        .siblings()
        .removeClass('active');
-    
+  var feature = $(this).attr('class').split(' ')[0];
+  
+  if(feature == "bkm-btn") {
+    $("#wz-AddBtn").css("display","none");
+    $("#bkm-AddBtn").css("display","");
+    $("#td-AddBtn").css("display","none");
+    $("#nt-AddBtn").css("display","none");
+    $(".wz-tab").css("display","none");
+    $(".wz-add-remove").css("display","none");
+    $(".bookmarks-tab").css("display","");
+    $(".todos-tab").css("display","none");
+    $(".notes-tab").css("display","none");
+   }
+
+   if(feature == "wgt-btn") {
+    $("#wz-AddBtn").css("display","");
+    $("#bkm-AddBtn").css("display","none");
+    $("#td-AddBtn").css("display","none");
+    $("#nt-AddBtn").css("display","none");
+    $(".wz-tab").css("display","");
+    $(".wz-add-remove").css("display","none");
+    $(".bookmarks-tab").css("display","none");
+    $(".todos-tab").css("display","none");
+    $(".notes-tab").css("display","none");
+   }
+
+   if(feature == "td-btn") {
+    $("#wz-AddBtn").css("display","none");
+    $("#bkm-AddBtn").css("display","none");
+    $("#td-AddBtn").css("display","");
+    $("#nt-AddBtn").css("display","none");
+    $(".wz-tab").css("display","none");
+    $(".wz-add-remove").css("display","none");
+    $(".bookmarks-tab").css("display","none");
+    $(".todos-tab").css("display","");
+    $(".notes-tab").css("display","none");
+   }
+
+   if(feature == "nt-btn") {
+    $("#wz-AddBtn").css("display","none");
+    $("#bkm-AddBtn").css("display","none");
+    $("#td-AddBtn").css("display","none");
+    $("#nt-AddBtn").css("display","");
+    $(".wz-tab").css("display","none");
+    $(".wz-add-remove").css("display","none");
+    $(".bookmarks-tab").css("display","none");
+    $(".todos-tab").css("display","none");
+    $(".notes-tab").css("display","");
+   }
+   
+     
 });
-
-$('.bkm-btn').click(function(){
- $('#AddBtn').removeClass('icon-calendar');
- $('#AddBtn').removeClass('icon-edit');
- $('#AddBtn').removeClass('icon-check');
- $('#AddBtn').addClass('icon-bookmark');
-});
-
-$('.wgt-btn').click(function(){
-  $('#AddBtn').removeClass('icon-bookmark');
-  $('#AddBtn').removeClass('icon-edit');
-  $('#AddBtn').removeClass('icon-check');
-  $('#AddBtn').addClass('icon-calendar');
- });
-
- $('.td-btn').click(function(){
-  $('#AddBtn').removeClass('icon-bookmark');
-  $('#AddBtn').removeClass('icon-edit');
-  $('#AddBtn').removeClass('icon-check');
-  $('#AddBtn').addClass('icon-check');
- });
-
- $('.nt-btn').click(function(){
-  $('#AddBtn').removeClass('icon-calendar');
-  $('#AddBtn').removeClass('icon-bookmark');
-  $('#AddBtn').removeClass('icon-check');
-  $('#AddBtn').addClass('icon-edit');
- });
-
 
 // packery and draggable initialization
 var $grid = $('.grid').packery({

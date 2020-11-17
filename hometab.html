@@ -24,9 +24,13 @@
  <div class="container-fluid row sticky-top m-0 p-0" style="background-color:#ffffff"> 
 
    <div class="row container-fluid pr-0"> 
-
-    <div class="col-md-3 text-left m-auto">
-      <button id="AddBtn" type="button" class="icon-calendar btn btn-primary btn-sm rounded"> ±</button>
+    <div class="col-md-3 text-left mt-2">
+      <button id="wz-AddBtn" type="button" class="icon-calendar btn btn-primary btn-sm rounded"> ±</button>
+      <button id="bkm-AddBtn" type="button" class="icon-bookmark btn btn-primary btn-sm rounded" style="display: none;"> ±</button>
+      <button id="td-AddBtn" type="button" class="icon-check btn btn-primary btn-sm rounded" style="display: none;"> ±</button>
+      <button id="nt-AddBtn" type="button" class="icon-edit btn btn-primary btn-sm rounded" style="display: none;"> ±</button>
+      <i class="fa fa-bars"></i>
+      <button id="AddBtn" type="button" class="icon-reorder btn btn-primary btn-sm rounded"> Menu</button>
     </div>
     
       <!-- Search Box -->
@@ -48,13 +52,15 @@
               "duckduckgo":"https:\/\/duckduckgo.com\/?q={KEYWORD}"}} -->
           </div>     
     
+
+          <!-- Menu Button -->
           <div class="col-md-3 text-right m-auto pr-0">
-            <i class="fa fa-bars"></i>
-            <button id="AddBtn" type="button" class="icon-reorder btn btn-primary btn-sm rounded"> Menu</button>
+            
            </div>
 
   </div>
 
+  <!-- Functionals Buttons -->
   <div class="col-md-12">
     <div class="nav-container m-0">
       <ul class="nav justify-content-left">
@@ -89,68 +95,40 @@
   </div>
 
     
-
   <!-- Main grid of widgets    -->  
-  <div class="grid">
+  <div class="wz-tab">
+    <div class="grid">
+      <h2> This space is for list of Widgets </h2>
 
-
-  </div>
-    
- 
-<!--Add Widget Modal Window-->
-<div class="modal fade" id="AddWidgetModal" tabindex="-1" role="dialog" aria-labelledby="AddWidgetModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content m-2">
-      <div class="modal-header p-2" style="background-color: cadetblue;">
-        <h5 class="modal-title" id="exampleModalLabel">Add New Widget</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body p-2">
-     
-        <form id="wform" name="wform">
-          <div class="row">
-          <div class="col-md-12">
-            <input id="wname" type="text" class="form-control" id="wname" placeholder="Enter Widget Name" name="wname">
-          </div>
-          <div class="col-md-12">
-            <div class="form-group p-1 mb-1">
-            <label for="colorpick" class="col-form-label p-0">Pick Size and Color:</label> &ensp;
-            
-            <input id="w-sm" type="radio" name="wsize" value="small" checked>
-            <label id="w-sm" for="w-sm">Small</label> &nbsp;
-            <input type="radio" id="w-md" name="wsize" value="medium">
-            <label id="w-sm" for="w-md">Medium</label> &nbsp;
-            <input type="radio" id="w-bg" name="wsize" value="big">
-            <label id="w-sm" for="w-bg">Big</label> &nbsp;
-            <input type="radio" id="w-bn" name="wsize" value="banner">
-            <label id="w-sm" for="w-bn">Banner</label>
-
-
-            <input id="colorpick" name="wcolor" type="color" value="#ffffff" class="form-control p-0 border-0 rounded-0" >
-            </div> 
-          </div> 
-          </div>    
-                               
-          <select class="custom-select">
-            <option selected>Select Widgets:</option>
-            <option value="1">Bookmarks</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-
-       </form>
-        
-
-      </div>
-      <div class="modal-footer">
-        <button id="widgetSave" type="button" class="btn btn-primary" data-dismiss="modal">Add Widget</button>
-      </div>
     </div>
   </div>
+  <div class="wz-add-remove" style="display: none;">
+    
+     <h2> This space is for list of widgets to be added or remove </h2>
+
+  </div>
+
+  <div class="bookmarks-tab" style="display: none;">
+    
+    <h2> This space is for list of bookmarks </h2>
+
+ </div>
+
+ <div class="todos-tab" style="display: none;">
+    
+  <h2> This space is for list of to-dos </h2>
+
 </div>
 
+<div class="notes-tab"style="display: none;">
+    
+  <h2> This space is for list of notes</h2>
+
+</div>
+
+
+    
+ 
 
 </div>
 
